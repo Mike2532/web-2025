@@ -1,0 +1,12 @@
+body {
+    background-image: url("images/backgroung.webp");
+    background-size: cover;  
+    background-repeat: no-repeat;
+    height: 100vh;
+    width: 100wh;
+    color: white;
+  }
+
+p { 
+    font-size: 22px;
+}
