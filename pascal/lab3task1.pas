@@ -1,4 +1,4 @@
-PROGRAM Hello(input, output);
+PROGRAM Hello(INPUT, OUTPUT);
 uses 
   DOS;
 begin
