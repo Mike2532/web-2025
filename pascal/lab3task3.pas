@@ -2,19 +2,27 @@ PROGRAM HelloDear(INPUT, OUTPT);
 USES
   DOS;
 VAR
-  Str: STRING;
+  Str, Ans: STRING;
+  I: INTEGER;
 BEGIN
   WRITELN('Content-Type: text/plain');
   WRITELN;
   WRITE('Hello ');
-  IF GetEnv('QUERY_STRING') = ''
+  Str := GetEnv('QUERY_STRING');
+  IF (GetEnv('QUERY_STRING') = '') OR (Pos('name=', Str) = 0)
   THEN
     WRITELN('Anonymus!')
   ELSE
     BEGIN
+      I := Pos('name=', Str) + 5;
+      Ans := '';
       WRITE('dear, ');
-      Str := GetEnv('QUERY_STRING');
-      Delete(Str, 1, 5);
-      WRITELN(Str)
+      WHILE (Str[I] <> '&') AND (I < Length(Str) + 1)
+      DO
+        BEGIN
+          Ans += Str[I];
+          Inc(I) 
+        END;
+      WRITELN(Ans)  
     END
 END.
