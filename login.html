@@ -3,19 +3,20 @@
     <head>
         <meta charset="UTF-8">
         <title>Вход</title>
+        <link href="style.css" rel="stylesheet"> 
     </head>
     <body>
-        <h1>Войти</h1>
-        <img src="/images/login.png" alt="Картинка страницы входа"> 
+        <h1 class="enter">Войти</h1>
+        <img src="/images/login.png" alt="Картинка страницы входа" class="hellophoto"> 
         <form action="/handler">
-            <p>Электропочта</p>
-            <input type="email" name="login_email" required>
-            <p>Введите электропочту в формате *****@***.***</p>
-            <p>Пароль</p>
-            <input type="password" name="login_password" required>
+            <p class="maintext">Электропочта</p>
+            <input class="inputform" type="email" name="login_email" required>
+            <p class="maintext comments">Введите электропочту в формате *****@***.***</p>
+            <p class="maintext">Пароль</p>
+            <input class="inputform" type="password" name="login_password" required>
             <img src="/images/eye_off.svg" alt="скрыть пароль">
             <p></p>
-            <input type="submit" name="sumbit_form">
+            <input class="inputform inputsubmit" type="submit" name="sumbit_form">
         </form>
     </body>
 </html>

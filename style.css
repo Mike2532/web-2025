@@ -1,0 +1,90 @@
+.enter {
+   font-family: "Golos UI"; 
+   font-size: 140px;
+   font-weight: 700;  
+   color: #222222;
+   line-height: 180px;
+}
+
+.hellophoto {
+    width: 462px;
+    height: 501px;
+}
+
+
+.maintext {
+    font-family: "Golos UI"; 
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #222222;
+}
+
+.maintext.username {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.maintext.comments {
+    font-size: 13px;
+    font-weight: 16px;
+    color: #808080;
+}
+
+.maintext.home {
+    color: #808080;
+}
+
+.maintext.home.posttime {
+    font-size: 14px;
+}
+
+.inputform {
+    width: 343px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #f2f3f5;
+    padding: 13px, 12px;
+}
+
+.inputform.inputsubmit {
+    font-family: "Golos UI"; 
+    font-size: 16px;
+    font-weight: 500;
+    height: 48;
+    background-color: #222222;
+    color: white;
+    padding-right: 16px;
+    padding-left: 16px;
+}
+
+.icon24px {
+    height: 24px;
+    width: 24px;
+}
+
+.reactionsbox {
+    width: 68px;
+    height: 30px;
+    background-color: #2222220D;
+    border-radius: 8px;
+    padding: 6px, 12px;
+}
+
+.counterbox {
+    width: 44px;
+    height: 24px;
+    background-color: #22222280;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.maintext.countertext {
+    color: white;
+}
+
+.reactionsheart {
+    width: 16px;
+    height: 18px;
+}
