@@ -10,6 +10,7 @@ VAR
   Ans: STRING;
 BEGIN
   Ans := '';
+
   IF POS(Key, Str) <> 0
   THEN
     BEGIN
@@ -37,3 +38,6 @@ BEGIN
   WRITELN('Last Name: ', GetQueryStringParameter('last_name'));
   WRITELN('Age: ', GetQueryStringParameter('age'));
 END.
+
+
+age=18214125125125&

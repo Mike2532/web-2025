@@ -1,14 +1,17 @@
 PROGRAM SarahRever(INPUT, OUTPUT);
 USES
   DOS;
+VAR
+  Str: STRING;
 BEGIN
+  Str := GetEnv('QUERY_STRING');
   WRITELN('Content-Type: text/plain');
   WRITELN;
-  IF GetEnv('QUERY_STRING') = 'lanters=1'
+  IF Str = 'lanters=1'
   THEN
     WRITELN('The British are camming by land')
   ELSE
-    IF GetEnv('QUERY_STRING') = 'lanters=2'
+    IF Str = 'lanters=2'
     THEN
       WRITELN('The British are camming by sea')
     ELSE

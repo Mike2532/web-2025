@@ -1,0 +1,16 @@
+.counterbox {
+    width: 44px;
+    height: 24px;
+    background-color: #22222280;
+    border-radius: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.reactionsbox {
+    width: 68px;
+    height: 30px;
+    background-color: #2222220D;
+    border-radius: 8px;
+    padding: 6px, 12px;
+}

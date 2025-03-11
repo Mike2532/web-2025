@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
+.inputform {
+    width: 343px;
+    height: 44px;
+    border-radius: 10px;
+    background-color: #f2f3f5;
+    padding: 13px, 12px;
+}
+
+.inputsubmit {
+    font-family: "Golos UI"; 
+    font-size: 16px;
+    font-weight: 500;
+    height: 48;
+    background-color: #222222;
+    color: white;
+    padding-right: 16px;
+    padding-left: 16px;
+    border-radius: 10px;
+}

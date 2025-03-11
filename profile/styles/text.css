@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
+.maintext {
+    font-family: "Golos Text"; 
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #222222;
+}
+
+.profilename {
+    font-family: "Golos Text"; 
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+    color: #222222;
+}
+
+.postbox {
+    font-family: "Golos Text"; 
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #222222; 
+}

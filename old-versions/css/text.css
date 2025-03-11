@@ -1,0 +1,65 @@
+@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
+
+.maintext {
+    font-family: "Golos Text"; 
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #222222;
+}
+
+.enter {
+    font-family: "Golos Text"; 
+    font-weight: 700; 
+    font-size: 140px;
+    line-height: 180px;
+    color: #222222;
+}
+
+.username {
+    font-family: "Golos Text"; 
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 18px;
+    color: #222222;
+}
+
+.texthomemore {
+    font-family: "Golos Text"; 
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: #808080;
+}
+
+.texthomeposttime{  
+    font-family: "Golos Text"; 
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #808080;
+}
+
+.loginformcomments {
+    font-family: "Golos Text"; 
+    font-weight: 16;
+    font-size: 13px;
+    line-height: 18px;
+    color: #808080;
+}
+
+.homecountertext {
+    font-family: "Golos Text"; 
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 18px;
+    color: white;
+}
+
+.profilename {
+    font-family: "Golos Text"; 
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 32px;
+    color: #222222;
+}
