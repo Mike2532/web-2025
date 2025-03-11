@@ -1,28 +1,33 @@
-PROGRAM HelloDear(INPUT, OUTPT);
+PROGRAM HelloDear(INPUT, OUTPUT);
 USES
   DOS;
 VAR
-  Str, Ans: STRING;
-  I: INTEGER;
+  Str, Ans, Temp: STRING;
+  I, PosAmp, Len: INTEGER;
 BEGIN
   WRITELN('Content-Type: text/plain');
   WRITELN;
   WRITE('Hello ');
   Str := GetEnv('QUERY_STRING');
-  IF (GetEnv('QUERY_STRING') = '') OR (Pos('name=', Str) = 0)
+  I := Pos('name=', Str);
+  Len := Length(Str);
+  IF (Str = '') OR (I = 0) OR (Str[I+5] = '&') OR ((I <> 1) AND (Str[I-1] <> '&')) OR (I + 5 = Len)  
   THEN
     WRITELN('Anonymus!')
   ELSE
     BEGIN
-      I := Pos('name=', Str) + 5;
-      Ans := '';
       WRITE('dear, ');
-      WHILE (Str[I] <> '&') AND (I < Length(Str) + 1)
-      DO
+      I := I + 5;
+      Ans := '';
+      Temp := Copy(Str, I, Len - I + 1);
+      PosAmp := Pos('&', Temp);
+      IF PosAmp = 0
+      THEN
+        WRITE(Temp)
+      ELSE
         BEGIN
-          Ans += Str[I];
-          Inc(I) 
-        END;
-      WRITELN(Ans)  
+          Ans := Copy(Temp, 1, PosAmp - 1);
+          WRITELN(Ans)
+        END; 
     END
 END.
