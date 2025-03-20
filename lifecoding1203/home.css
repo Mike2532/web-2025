@@ -1,0 +1,45 @@
+* {
+    margin: 0; 
+}
+
+.menu-icon-wrapper { 
+    max-width: 40px;
+    padding: 8px;
+    margin-bottom: 16px; 
+}
+
+.menu-icon-wrapper-active::after {
+    display: block;
+    content: '';
+    width: 4px; 
+    height: 4px; 
+    background: #222222;
+    border-radius: 50%;
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px; 
+    background-position: center center;
+}
+
+.menu-icon-home {
+    background-image: url("/lifecoding1203/images/home_menu_item.svg");
+}
+
+.menu-icon-user {
+    background-image: url("/lifecoding1203/images/person_menu_item.svg");
+}
+
+.menu-icon-plus {
+    background-image: url("/lifecoding1203/images/plus_menu_item.svg");
+}
+
+.likes {
+    max-width: 69px; 
+    font: 400 15px/1.2 "Golos UI", sans-serif;
+    color: #222222;
+    padding: 6px 12px; 
+    border-radius: 8px; 
+    background: rgba(34, 34, 34, 0.05);
+}

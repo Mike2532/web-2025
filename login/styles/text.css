@@ -1,25 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..900&display=swap');
-
 .enter {
-    font-family: "Golos Text"; 
+    font-family: "Golos UI"; 
     font-weight: 700; 
     font-size: 140px;
     line-height: 180px;
     color: #222222;
-}
-
-.maintext {
-    font-family: "Golos Text"; 
-    font-weight: 400;
-    font-size: 15px;
-    line-height: 18px;
-    color: #222222;
+    letter-spacing: -1.5px;
 }
 
 .loginformcomments {
-    font-family: "Golos Text"; 
-    font-weight: 16;
-    font-size: 13px;
-    line-height: 18px;
+    display: block;
+    font: 400 13px/1.23 "Golos UI", sans-serif;
     color: #808080;
+    margin-bottom: 16px; 
 }

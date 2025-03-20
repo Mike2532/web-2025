@@ -1,0 +1,108 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* меню */
+
+.content {
+    width: 972px;
+}
+
+.page-menu {
+    font-size: 0;
+    padding-top: 49px;
+    width: 72px;
+}
+
+.page-menu__icon {
+    display: block;
+    padding: 8px;
+    margin-inline: 16px;
+    margin-block: 16px 0;
+}
+
+.page-menu__icon--active {
+    display: block;
+    margin-inline: 16px;
+    margin-top: 16px;
+}
+
+/* часть с пользователем*/
+
+.page-user-info {
+    width: 361px;
+    margin-top: 96px;
+    letter-spacing: -0.15px;
+}
+
+.page-user-info--photo {
+    display: block;
+    width: 123px;
+    height: 123px;
+    border-radius: 16px;
+    margin-top: 97px;
+}
+
+.page-user-info--name {
+    display: block;
+    font-family: "Golos UI"; 
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 1;
+    color: #222222;
+    margin-top: 20px;
+}
+
+.page-user-info--status {
+    font-family: "Golos UI"; 
+    font-size: 15px;
+    line-height: 1.2;
+    color: #222222;
+    margin-top: 10px;
+}
+
+.page-header__profile-statistic {
+    background-color: #F2F3F5;
+    width: max-content;
+    border-radius: 6px;
+    padding: 6px 10px;
+    margin-top: 12px;
+}
+
+.profile-statistic__info {
+    font-family: "Golos UI";
+    font-size: 15px;
+    color: #222222; 
+    line-height: 1.2;
+}
+
+.profile-statistic__picture {
+    width: 16px;
+    height: 16px;
+    margin-right: 6px;
+}
+
+/* посты профиля */
+
+.page-user-posts {
+    margin-top: 42px;
+    width: 100%;
+    font-size: 0;
+}
+
+.page-user-posts__post--left-and-center {
+    height: 322px; 
+    width: 322px; 
+    margin-bottom: 2px;
+    margin-right: 2px;
+    border-radius: 2px;
+}
+
+.page-user-posts__post--right {
+    height: 322px; 
+    width: 322px; 
+    margin-bottom: 2px;
+    border-radius: 2px;
+}

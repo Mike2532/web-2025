@@ -3,33 +3,35 @@
     <head>
         <meta charset="UTF-8">
         <title>Профиль</title>
-        <link href="/profile/styles/pictures.css" rel="stylesheet">
-        <link href="/profile/styles/text.css" rel="stylesheet">
-        <link href="/profile/styles/boxes.css" rel="stylesheet">
+        <link href="/font.css" rel="stylesheet">
+        <link href="/profile/styles/profile.css" rel="stylesheet">
     </head>
     <body>
-        <ul>
-            <li><img src="/profile/images/home_menu_item.svg" alt="кнопка меню"></li>
-            <li><img src="/profile/images/person_menu_item.svg" alt="кнопка профиля"></li>
-            <li><img src="/profile/images/plus_menu_item.svg" alt="кнопка плюс"></li>
-        </ul>
+        <div class="page-menu"> 
+            <img class="page-menu__icon"         src="/profile/images/Home.svg"         alt="кнопка меню"> 
+            <img class="page-menu__icon--active" src="/profile/images/User_active.svg"  alt="кнопка профиля">
+            <img class="page-menu__icon"         src="/profile/images/Plus.svg"         alt="кнопка плюс">       
+        </div>    
 
-        <div>
-            <img class="profilephoto" src="/profile/images/profileava.png" alt="фотография пользователя">
-            <p class="profilename">Ваня Денисов</p>
-            <p class="maintext">Привет! Я системный аналитик в ACME :) Тут моя жизнь только для самых классных!</p>
-            <div class="profilecounterbox">
-                <img src="/profile/images/posts.svg" alt="изображение картинки">
-                <span class="postbox">43</span>
-                <span class="postbox">поста</span>
+        <main class="content">
+            <div class="page-user-info">
+                <img class="page-user-info--photo" src="/profile/images/profileava.png" alt="фотография пользователя">
+                <h1 class="page-user-info--name" >Ваня Денисов</h1>
+                <p class="page-user-info--status">Привет! Я системный аналитик в ACME :) Тут моя жизнь только для самых классных!</p>
+                <div class="page-header__profile-statistic">
+                    <img class="profile-statistic__picture" src="/profile/images/posts.svg" alt="изображение картинки">
+                    <span class="profile-statistic__info">43 поста</span>
+                </div>
             </div>
-        </div>
 
-        <img src="/profile/images/profile_posts/Frame 22.png" alt="запись в профиле">
-        <img src="/profile/images/profile_posts/Frame 23.png" alt="запись в профиле">
-        <img src="/profile/images/profile_posts/Frame 24.png" alt="запись в профиле">
-        <img src="/profile/images/profile_posts/Frame 25.png" alt="запись в профиле">
-        <img src="/profile/images/profile_posts/Frame 26.png" alt="запись в профиле">
-        <img src="/profile/images/profile_posts/Frame 27.png" alt="запись в профиле">
+            <div class="page-user-posts">
+                <img class="page-user-posts__post--left-and-center" src="/profile/images/profile_posts/Frame22.png" alt="запись в профиле">
+                <img class="page-user-posts__post--left-and-center" src="/profile/images/profile_posts/Frame23.png" alt="запись в профиле">
+                <img class="page-user-posts__post--right"           src="/profile/images/profile_posts/Frame24.png" alt="запись в профиле">
+                <img class="page-user-posts__post--left-and-center" src="/profile/images/profile_posts/Frame25.png" alt="запись в профиле">
+                <img class="page-user-posts__post--left-and-center" src="/profile/images/profile_posts/Frame26.png" alt="запись в профиле">
+                <img class="page-user-posts__post--right"           src="/profile/images/profile_posts/Frame27.png" alt="запись в профиле">
+            </div>
+        </main>        
     </body>
 </html>

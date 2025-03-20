@@ -1,9 +1,42 @@
 .iconmedium {
-    height: 24px;
-    width: 24px;
+    height: 32px;
+    width: 32px;
 }
 
 .reactionsheart {
     width: 16px;
     height: 18px;
+}
+
+.menu-icon-wrapper { 
+    max-width: 40px;
+    padding: 8px;
+    margin-bottom: 16px; 
+}
+
+.menu-icon {
+    width: 24px;
+    height: 24px; 
+    background-position: center center;
+}
+
+.menu-icon-wrapper-active::after {
+    display: block;
+    content: '';
+    width: 4px; 
+    height: 4px; 
+    background: #222222;
+    border-radius: 50%;
+}
+
+.menu-icon-home {
+    background-image: url("/home/images/home.svg");
+}
+
+.menu-icon-user {
+    background-image: url("/home/images/user.svg");
+}
+
+.menu-icon-plus {
+    background-image: url("/home/images/plus.svg");
 }

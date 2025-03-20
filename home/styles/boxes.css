@@ -1,3 +1,26 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.home {
+    width: 474px;
+    margin-bottom: 20px;
+}
+
+.hat {
+    display: block;
+    width: 100%;
+    margin-bottom: 16px;
+    font: 500 14px/1.28 "Golos UI", sans-serif;
+    color: #222222;
+}
+
+.post {
+    width: 100%;
+    margin-bottom: 16px;
+}
+
 .counterbox {
     width: 44px;
     height: 24px;
@@ -8,9 +31,20 @@
 }
 
 .reactionsbox {
-    width: 68px;
-    height: 30px;
-    background-color: #2222220D;
-    border-radius: 8px;
-    padding: 6px, 12px;
+    max-width: 69px; 
+    font: 400 15px/1.2 "Golos UI", sans-serif;
+    color: #222222;
+    padding: 6px 12px; 
+    border-radius: 8px; 
+    background: rgba(34, 34, 34, 0.05);
+    margin-bottom: 16px;
+}
+
+.texthomeposttime{  
+    font-family: "Golos UI"; 
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #808080;
+    margin-top: 8px;
 }
