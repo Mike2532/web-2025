@@ -1,90 +1,93 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .title {
-    font-family: "Golos UI"; 
-    font-weight: 700; 
-    font-size: 140px;
-    line-height: 180px;
-    color: #222222;
-    letter-spacing: -1.5px;
+  font-family: "Golos UI", sans-serif; 
+  font-weight: 700; 
+  font-size: 140px;
+  line-height: 180px;
+  color: #222222;
+  letter-spacing: -1.5px;
 }
 
 .user-avatar {
-    max-width: 100%;
-    width: 462px;
-    height: 501px;
+  width: 462px;
+  height: 501px;
 }
 
 .auth {
-    font-family: "Golos UI";
-    font-size: 15px;
-    line-height: 1.2;
-    color: #222222;
-    letter-spacing: -0.15px; 
-    margin-bottom: 5px; 
-    max-width: 343px;
+  font-family: "Golos UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  color: #222222;
+  letter-spacing: -0.15px; 
+  margin-bottom: 5px; 
 }
 
 .auth__field {
-    width: 100%; 
-    margin-bottom: 5px; 
-    font-family: "Golos UI";
-    font-size: 15px;
-    line-height: 1.2;
-    padding: 13px 12px; 
-    background-color: #f2f3f5;
-    border: 1px solid #f2f3f5;
-    border-radius: 10px;
-    transition: border 0.3s ease;
-    outline: none;
+  display: block;
+  width: 343px;
+  box-sizing: border-box;
+  margin-bottom: 5px; 
+  font-family: "Golos UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  padding: 13px 12px; 
+  background-color: #f2f3f5;
+  border: 1px solid #f2f3f5;
+  border-radius: 10px;
+  transition: border 0.3s ease;
+  outline: none;
 }
 
 .auth__field:focus{
-    border: 1px solid #3f8ae0;
+  border: 1px solid #3f8ae0;
 }
 
 .auth__field-error {
-    border: 1px solid #e64646;
+  border: 1px solid #e64646;
 }
 
 .auth__send-button {
-    margin-top: 32px;
-    width: 100%; 
-    font-family: "Golos UI";
-    font-weight: 500;
-    font-size: 16px;
-    color: #ffffff;
-    background-color: #222222;
-    padding: 14.5px; 
-    border-radius: 10px;
-    border: 2px solid #222222;
-    transition: border 0.3s ease;
-    cursor: pointer;
+  display: block;
+  margin-top: 32px;
+  width: 343px; 
+  font-family: "Golos UI", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  color: #ffffff;
+  background-color: #222222;
+  padding: 14.5px; 
+  border-radius: 10px;
+  border: 2px solid #222222;
+  transition: border 0.3s ease;
+  cursor: pointer;
 }
 
 .auth__send-button:focus {
-    border: 2px solid #3f8ae0;
+  border: 2px solid #3f8ae0;
 }
 
 .auth__send-button:disabled {
-    background-color: #b4b4b4;
-    border: 2px solid #b4b4b4;
+  background-color: #b4b4b4;
+  border: 2px solid #b4b4b4;
 }
 
 .auth__hide-password {
-    width: 24px;
-    height: 24px;
+  width: 24px;
+  height: 24px;
 }
 
 /* стили для текста*/
 
 .auth__comments {
-    display: block;
-    font: 400 13px/1.23 "Golos UI", sans-serif;
-    color: #808080;
-    margin-bottom: 16px; 
+  display: block;
+  font-family: "Golos UI", sans-serif;
+  font-size: 14px;
+  line-height: 1.23;
+  color: #808080;
+  margin-bottom: 16px; 
 }

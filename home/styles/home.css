@@ -1,79 +1,79 @@
 * {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
 .page__menu {
-    font-size: 0;
-    padding-top: 49px;
-    width: 72px;
+  font-size: 0;
+  padding-top: 49px;
+  width: 72px;
 }
 
 .page__menu__icon {
-    display: block;
-    padding: 8px;
-    margin-inline: 16px;
-    margin-top: 16px;
+  display: block;
+  padding: 8px;
+  margin-inline: 16px;
+  margin-top: 16px;
 }
 
 .page__menu__icon--active {
-    display: block;
-    margin-inline: 16px;
-    margin-top: 16px;
+  display: block;
+  margin-inline: 16px;
+  margin-top: 16px;
 }
 
 .post {
-    width: 474px;
-    padding-top: 16px;
-    padding-bottom: 20px;
+  width: 474px;
+  padding-top: 16px;
+  padding-bottom: 20px;
 }
 
 .post__header {
-    display: block;
-    width: 100%;
-    font-family: "Golos UI";
-    font-weight: 500;
-    font-size: 14px; 
-    line-height: 1.28;
-    color: #222222;
-    margin-top: 16px;
+  display: block;
+  width: 100%;
+  font-family: "Golos UI", sans-serif;
+  font-weight: 500;
+  font-size: 14px; 
+  line-height: 1.28;
+  color: #222222;
+  margin-top: 16px;
 }
 
 .post__edit-icon {
-    height: 32px;
-    width: 32px;
+  height: 32px;
+  width: 32px;
 }
 
 .post__picture {
-    width: 100%;
-    margin-top: 16px;
+  width: 100%;
+  margin-top: 16px;
 }
 
 .post__reactions {
-    width: 69px; 
-    font-family: "Golos UI";
-    font-size: 15px;
-    line-height: 1.2;
-    color: #222222;
-    padding: 6px 12px; 
-    border-radius: 8px; 
-    background: #2222220D;
-    margin-top: 16px;
+  width: 69px; 
+  font-family: "Golos UI", sans-serif;
+  font-size: 15px;
+  line-height: 1.2;
+  color: #222222;
+  padding: 6px 12px; 
+  border-radius: 8px; 
+  background: #2222220D;
+  margin-top: 16px;
 }
 
 .post__description {
-    font-family: "Golos UI"; 
-    font-size: 15px;
-    line-height: 1.2;
-    color: #222222;
-    margin-top: 16px;
+  font-family: "Golos UI", sans-serif; 
+  font-size: 15px;
+  line-height: 1.2;
+  color: #222222;
+  margin-top: 16px;
 }
 
 .post__when-posted {  
-    font-family: "Golos UI"; 
-    font-size: 14px;
-    line-height: 18px;
-    color: #808080;
-    margin-top: 25px;
+  font-family: "Golos UI", sans-serif; 
+  font-size: 14px;
+  line-height: 18px;
+  color: #808080;
+  margin-top: 25px;
 }

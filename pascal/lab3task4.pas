@@ -1,43 +1,36 @@
 PROGRAM FindParam(INPUT, OUTPUT);
 USES
   DOS;
-VAR
-  I: INTEGER;
-  Str: STRING;
 
 FUNCTION GetQueryStringParameter(Key: STRING): STRING;
 VAR
-  Ans: STRING;
+  Ans, Temp, Str: STRING;
+  PosAmp, Len, I, LengthOfKey: INTEGER;
 BEGIN
   Ans := '';
-
-  IF POS(Key, Str) <> 0
+  Str := GetEnv('QUERY_STRING');
+  I := Pos(Key, Str);
+  Len := Length(Str);
+  LengthOfKey := Length(Key);
+  IF NOT((Str = '') OR (I = 0) OR (Str[I + LengthOfKey + 1] = '&') OR ((I <> 1) AND (Str[I - 1] <> '&')) OR (I + LengthOfKey + 1 = Len))  
   THEN
     BEGIN
-      I := Pos(Key, Str);
-      WHILE Str[I] <> '='
-      DO
-        Inc(I);
-      Inc(I);
-      WHILE (Str[I] <> '&') AND (I < Length(Str) + 1)
-      DO
-        BEGIN
-          Ans += Str[I];
-          Inc(I) 
-        END
-    END;
-  GetQueryStringParameter := Ans;
+      I := I + LengthOfKey + 1;
+      Temp := Copy(Str, I, Len - I + 1);
+      PosAmp := Pos('&', Temp);
+      IF PosAmp = 0
+      THEN
+        Ans := Temp
+      ELSE
+        Ans := Copy(Temp, 1, PosAmp - 1);
+    END;    
+  GetQueryStringParameter := Ans
 END;
-
 
 BEGIN
   WRITELN('Content-Type: text/plain');
   WRITELN;
-  Str := GetEnv('QUERY_STRING');
   WRITELN('First Name: ', GetQueryStringParameter('first_name'));
   WRITELN('Last Name: ', GetQueryStringParameter('last_name'));
   WRITELN('Age: ', GetQueryStringParameter('age'));
 END.
-
-
-age=18214125125125&
