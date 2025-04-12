@@ -3,11 +3,6 @@
     require __DIR__ . '/validator.php';
     $users = json_decode(file_get_contents(__DIR__ . '/../json_folder/users.json'), true);
     
-    function redirect() {
-        header('Location: /pages/home/');
-        exit();
-    }
-    
     $error = true;
     if (isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT, ['min_range' => 1])) {
         $user_id = short_to_long_id($_GET['id']);
@@ -29,6 +24,7 @@
         }
     }
     if ($error) {
-        redirect();
+        header('Location: /pages/home/');
+        exit();
     }
 ?>
