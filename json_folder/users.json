@@ -1,0 +1,20 @@
+[
+    {
+        "user_id": "67f6e135bd0068.08606824",
+        "user_first_name": "Ваня",
+        "user_last_name": "Денисов",
+        "user_status": "Привет! Я системный аналитик в ACME :) Тут моя жизнь только для самых классных!",
+        "user_avatar": "/media/user_media/ivan/avatar/profileava.png",
+        "user_email": "ivanDenisov@gmail.com",
+        "user_password": "964b398ecd55793d8ca93e01274efe1377a70c8dc358fdca17cb4e94a9ed7777"
+    },
+    {
+        "user_id": "67f6e14c3c9b40.71886685",
+        "user_first_name": "Лиза",
+        "user_last_name": "Демина",
+        "user_status": "Привет)",
+        "user_avatar": "/media/user_media/lisa/avatar/profileavaLisa.png",
+        "user_email": "lisaDemina@gmail.com",
+        "user_password": "1d58cd50d9d0a850f31401a5a3e7dcf02874dcbe8d4de4f804140180d7c2f867"
+    }   
+]
