@@ -6,8 +6,8 @@
     </head>
     <body>
         <form action="happyTicket.php" method="post">
-            <input type="number" name="rangeStart" placeholder="начало"> <p></p>
-            <input type="number" name="rangeEnd" placeholder="конец"> <p></p>
+            <input type="number" name="rangeStart" placeholder="начало" min="100000" max="999999" required> <p></p>
+            <input type="number" name="rangeEnd" placeholder="конец" min="100000" max="999999" required> <p></p>
             <input type="submit"> 
         </form>
     </body>

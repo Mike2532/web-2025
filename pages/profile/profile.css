@@ -8,12 +8,16 @@
 
 .content {
   width: 972px;
+  margin: 0 auto;
 }
 
 .page-menu {
   font-size: 0;
   padding-top: 49px;
   width: 72px;
+  height: 100vh;
+  position: fixed;
+  border-right: 1px solid #2222220D;
 }
 
 .page-menu__icon {
@@ -32,9 +36,13 @@
 /* часть с пользователем*/
 
 .page-user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 361px;
   margin-top: 96px;
   letter-spacing: -0.15px;
+  margin: 0 auto;
 }
 
 .page-user-info--photo {
@@ -61,9 +69,12 @@
   line-height: 1.2;
   color: #222222;
   margin-top: 10px;
+  text-align: center;
 }
 
 .page-header__profile-statistic {
+  display: flex;
+  align-items: center;
   background-color: #F2F3F5;
   width: max-content;
   border-radius: 6px;

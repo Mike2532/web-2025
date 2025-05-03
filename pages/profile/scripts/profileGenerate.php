@@ -1,8 +1,7 @@
 <?php
     require __DIR__ . '/../../user_info.php';
 
-    function choose_mode(int $i)
-    {
+    function chooseMode(int $i): void {
         if ($i % 3 == 0) {
             echo 'left-and-center';
         } else {
@@ -10,7 +9,7 @@
         }  
     }
 
-    function post_counter_ending(int $post_counter) {
+    function postCounterEnding(int $post_counter): void {
         echo ' пост';
         switch ($post_counter % 10): 
             case 0:
@@ -28,38 +27,29 @@
             endswitch;
     }
 
-    function get_user_posts(string $user_id) {
+    function getUserPosts(string $user_id): array {
         $posts = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/posts.json'), true);
     
         $user_posts = [
             'post-image' => [],
-            'post-id' => [],
             'counter' => 0,
         ];
     
         foreach ($posts as $post) {
-            if ($post['post_author_id'] == $user_id) {
-
-                if (inner_content_validate($post['post_content'][0]) && inner_content_validate($post['post_id'])) {
-                    $user_posts['post-image'][] = $post['post_content'][0];
-                    $user_posts['post-id'][] = $post['post_id'];
-                    $user_posts['counter']++;
-                }
+            if (postValidate($user_id, $post)) {
+                $user_posts['post-image'][] = $post['post_content'];
+                $user_posts['counter']++;
             }
         }
     
         return $user_posts;
     }
 
-    function user_post_generation(array $user_posts)
-    {
-        for ($i = 0; $i < $user_posts['counter']; $i++)
-        {
-            $post_image = $user_posts['post-image'][$i];
-            $post_id = $user_posts['post-id'][$i];
+    function printProfile(array $user_posts): void {
+        for ($i = 0; $i < $user_posts['counter']; $i++) {
             require __DIR__ . '/post_sample.php';
         }
     }   
-    
-    $user_posts = get_user_posts($user_id);
+
+    $user_posts = getUserPosts($user_id);
 ?>

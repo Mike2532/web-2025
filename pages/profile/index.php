@@ -21,12 +21,12 @@
                 <p class="page-user-info--status"> <?= $user_status ?> </p>
                 <div class="page-header__profile-statistic">
                     <img class="profile-statistic__picture" src="/media/static_media/profile__posts.svg" alt="изображение картинки">
-                    <span class="profile-statistic__info"><?= $user_posts['counter'] ?> <?php post_counter_ending($user_posts['counter']) ?></span>
+                    <span class="profile-statistic__info"><?= $user_posts['counter'] ?> <?php postCounterEnding($user_posts['counter']) ?></span>
                 </div>
             </div>
 
             <div class="page-user-posts">
-                <?php user_post_generation($user_posts) ?>
+                <?php printProfile($user_posts) ?>
             </div>
 
         </main>        

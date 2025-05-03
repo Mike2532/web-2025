@@ -7,7 +7,6 @@ VAR
   Ans, Temp, Str: STRING;
   PosAmp, Len, I, LengthOfKey: INTEGER;
 BEGIN
-  Ans := '';
   Str := GetEnv('QUERY_STRING');
   I := Pos(Key, Str);
   Len := Length(Str);
@@ -16,6 +15,7 @@ BEGIN
   THEN
     BEGIN
       I := I + LengthOfKey;
+      Ans := '';
       Temp := Copy(Str, I, Len - I + 1);
       PosAmp := Pos('&', Temp);
       IF PosAmp = 0

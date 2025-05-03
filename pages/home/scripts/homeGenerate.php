@@ -1,17 +1,7 @@
 <?php
-    require __DIR__ . '/../../validator.php';
     require __DIR__ . '/../../id_convert.php';
 
-    function get_seeker_id()
-    {
-        if (isset($_GET['id']) && filter_var($_GET['id'], FILTER_VALIDATE_INT, ['min_range' => 1])) {
-            return short_to_long_id($_GET['id']);
-        }
-        return -1;
-    }
-
-    function get_post_time(int $seconds)
-    {
+    function getPostTime(int $seconds): string {
         $time = time() - $seconds;
        
         if ($time < 60) {
@@ -37,53 +27,67 @@
         }
     }
 
-    function homeGenerate()
-    {
+    function findUser(array $users, string $post_author_id): array|bool {
+        foreach ($users as $user) {
+            if (($user['user_id'] == $post_author_id) && 
+                nameValidate($user['user_first_name']) &&
+                nameValidate($user['user_last_name']) &&
+                innerContentValidate($user['user_avatar'])) {
+
+                $post_author_first_name = $user['user_first_name'];
+                $post_author_last_name = $user['user_last_name'];
+                $post_author_ava = $user['user_avatar'];
+                return $user;
+            }
+        }
+        return false;
+    }
+
+    function postFormat(array $user, array $post): array {
+        return [
+            'user_first_name' => $user['user_first_name'],
+            'user_last_name' => $user['user_last_name'],
+            'user_avatar' => $user['user_avatar'],
+            'post_when_posted' => getPostTime($post['post_whenPosted']),
+            'post_content' => $post['post_content'],
+            'post_id' => $post['post_id'],
+            'post_reactions' => $post['post_reactions'],
+            'post_description' => $post['post_description'],
+        ];
+    }
+
+    function homeGenerate(): array {
         $users = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/users.json'), true);
         $posts = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/posts.json'), true);
-        $seeker_id = get_seeker_id();
-        $last_author_id = null;
+
+        $homeContent = [];
 
         foreach ($posts as $post) {
-            $valid = false;
-            $post_author_id = null;
-            $whenPosted = null;
-            if (inner_content_validate($post['post_author_id'])) {
-                $post_author_id = $post['post_author_id'];
+
+            if (!isValidUser($post, idGet())) {
+                continue;
+            }
+
+            $user = findUser($users, $post['post_author_id']);
+            if ($user === false) {
+                continue;
             }
             
-            if (isset($post_author_id) && (($seeker_id == $post_author_id) || ($seeker_id == -1))) {
-                $post_whenPosted = $post['post_whenPosted'];
-                
-                if ($post_author_id !== $last_author_id) {
-                    foreach ($users as $user) {
-                        if ($user['user_id'] == $post_author_id) {
-                            if (name_validate($user['user_first_name']) &&
-                                name_validate($user['user_last_name']) &&
-                                inner_content_validate($user['user_avatar'])) {
-    
-                                    $post_author_first_name = $user['user_first_name'];
-                                    $post_author_last_name = $user['user_last_name'];
-                                    $post_author_ava = $user['user_avatar'];
-                                    $last_author_id = $user['user_id'];
-                                    $valid = true;
-                            } 
-                        }
-                    }
-                } else {
-                    $valid = true;
-                }
+            if (!postTimeValidate($post['post_whenPosted'])) {
+                continue;
+            }
+            
+            $homeContent[] = postFormat($user, $post);
+        }
 
-                
-                if (postTime_validate($post['post_whenPosted'])) {
-                    $whenPosted = get_post_time($post['post_whenPosted']);
-                }
-                
-                if ($valid && isset($whenPosted)) {
-                    require __DIR__ . '/post.php'; 
-                }
-            }   
+        return $homeContent;
+    }
+
+    function printHome(array $homeContent): void {
+        foreach ($homeContent as $post) {
+            require __DIR__ . '/post.php';
         }
     }
 
+    printHome(homeGenerate());
 ?>

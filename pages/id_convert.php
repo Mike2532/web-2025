@@ -1,14 +1,18 @@
 <?php 
-function short_to_long_id (int $short_id) {
-    switch ($short_id) {
-        case 1:
-            return "67f6e135bd0068.08606824"; //id вани
-            break;
-        case 2: 
-            return "67f6e14c3c9b40.71886685"; //id лизы
-            break;  
-        default:
-            return $short_id;     
+    require __DIR__ . '/validator.php';
+
+    function idGet(): string {
+        if (isset($_GET['id'])) {
+            $short_id = $_GET['id'];
+            if (idValidate($short_id)) {
+                return $short_id;
+            } else {
+                $users = json_decode(file_get_contents(__DIR__ . '/../json_folder/users.json'), true);
+                if ($short_id <= count($users)) {
+                    return $users[$short_id - 1]['user_id'];
+                } 
+            }
+        }
+        return '-1';
     }
-}
 ?>
