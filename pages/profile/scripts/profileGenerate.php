@@ -1,14 +1,6 @@
 <?php
     require __DIR__ . '/../../user_info.php';
 
-    function chooseMode(int $i): void {
-        if ($i % 3 == 0) {
-            echo 'left-and-center';
-        } else {
-            echo 'right';   
-        }  
-    }
-
     function postCounterEnding(int $post_counter): void {
         echo ' пост';
         switch ($post_counter % 10): 

@@ -37,7 +37,7 @@ function getPasswordParts(comandsLen) {
     const sequense = []
     while (sequense.length < 4) {
         let comand = Math.floor(Math.random() * 4)
-        if (sequense.includes(comand) === false) {
+        if (!sequense.includes(comand)) {
             sequense.push(comand)
         }
     }

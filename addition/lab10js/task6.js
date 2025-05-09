@@ -1,15 +1,19 @@
 const nums = {a: 1, b: 2, c: 3, d: 'hello'};
 
 function mapObject(nums, callback) {
-    return Object.fromEntries(Object.entries(nums).map(([key, val]) => [key, callback(val)]))
+    const obj = {}
+    for (let key in nums) {
+        obj[key] = callback(nums[key])
+    }
+    return obj
 }
 
-function mult(x) {
+function double(x) {
     if (Number.isFinite(x)) {
-        return x * x
+        return x * 2
     } else {
         return x
     }
 }
 
-console.log(mapObject(nums, mult))
+console.log(mapObject(nums, double))

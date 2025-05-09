@@ -1,8 +1,10 @@
 <div class="post">
-    <div class="post__header">
-        <img class="post__author-ava" src=<?= $post['user_avatar'] ?> alt="фотография пользователя">
-        <span><?= $post['user_first_name'] ?> <?= $post['user_last_name'] ?></span>
-        <img class="post__edit-icon" src="/media/static_media/edit_icon.svg" alt="кнопка редактирования">
+    <div class="header">
+        <div class="header__user-info">
+            <img class="header__author-ava" src=<?= $post['user_avatar'] ?> alt="фотография пользователя">
+            <span><?= $post['user_first_name'] ?> <?= $post['user_last_name'] ?></span>
+        </div>
+        <img class="header__edit-icon" src="/media/static_media/edit_icon.svg" alt="кнопка редактирования">
     </div>
 
     <img class="post__picture" src=<?= $post['post_content'][0] ?> alt="картинка поста">

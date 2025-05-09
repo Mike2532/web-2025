@@ -8,27 +8,28 @@
         <?php require __DIR__ . '/scripts/profileGenerate.php' ?>
     </head>
     <body>
-        <div class="page-menu"> 
-            <img class="page-menu__icon"         src="/media/static_media/menu_items/home.svg"         alt="кнопка меню"> 
-            <img class="page-menu__icon--active" src="/media/static_media/menu_items/user-active.svg"  alt="кнопка профиля">
-            <img class="page-menu__icon"         src="/media/static_media/menu_items/plus.svg"         alt="кнопка плюс">       
-        </div>    
+        <div class="menu"> 
+            <img class="menu__icon" src="/media/static_media/menu_items/home-active.svg"  alt="кнопка меню"> 
+            <img class="menu__icon" src="/media/static_media/menu_items/user.svg"         alt="кнопка профиля">
+            <img class="menu__icon" src="/media/static_media/menu_items/plus.svg"         alt="кнопка плюс">       
+        </div>     
+
+        <header class="top-of-page"></header>
 
         <main class="content">
-            <div class="page-user-info">
-                <img class="page-user-info--photo" src=<?= $user_avatar ?> alt="фотография пользователя">
-                <h1 class="page-user-info--name" ><?= $user_first_name ?> <?= $user_last_name ?></h1>
-                <p class="page-user-info--status"> <?= $user_status ?> </p>
-                <div class="page-header__profile-statistic">
+            <div class="user-info">
+                <img class="user-info__photo" src=<?= $user_avatar ?> alt="фотография пользователя">
+                <h1 class="user-info__name" ><?= $user_first_name ?> <?= $user_last_name ?></h1>
+                <p class="user-info__status"> <?= $user_status ?> </p>
+                <div class="profile-statistic">
                     <img class="profile-statistic__picture" src="/media/static_media/profile__posts.svg" alt="изображение картинки">
                     <span class="profile-statistic__info"><?= $user_posts['counter'] ?> <?php postCounterEnding($user_posts['counter']) ?></span>
                 </div>
             </div>
 
-            <div class="page-user-posts">
+            <div class="user-posts">
                 <?php printProfile($user_posts) ?>
             </div>
-
         </main>        
     </body>
 </html>

@@ -14,3 +14,5 @@ function uniqueElements(elements) {
         console.log(elem, ' ', uniqueElements[elem])
     }
 }
+
+uniqueElements(['привет', 'hello', 1, '1'])

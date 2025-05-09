@@ -1,1 +1,1 @@
-<img class="page-user-posts__post--<?php chooseMode($i) ?>" src=<?= $user_posts['post-image'][$i][0] ?> alt="запись в профиле">
+<img class="user-posts__post" src=<?= $user_posts['post-image'][$i][0] ?> alt="запись в профиле">

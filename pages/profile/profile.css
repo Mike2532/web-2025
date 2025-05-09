@@ -4,82 +4,72 @@
   padding: 0;
 }
 
-/* меню */
+.top-of-page {
+  height: 73px;
+}
 
 .content {
   width: 972px;
-  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
+  align-items: center;
 }
 
-.page-menu {
-  font-size: 0;
-  padding-top: 49px;
+.menu {
   width: 72px;
-  height: 100vh;
+  height: 100%;
   position: fixed;
+  padding: 24px 16px;
   border-right: 1px solid #2222220D;
 }
 
-.page-menu__icon {
-  display: block;
-  padding: 8px;
-  margin-inline: 16px;
-  margin-block: 16px 0;
-}
-
-.page-menu__icon--active {
-  display: block;
-  margin-inline: 16px;
+.menu__icon {
   margin-top: 16px;
 }
 
-/* часть с пользователем*/
-
-.page-user-info {
+.user-info {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 361px;
-  margin-top: 96px;
   letter-spacing: -0.15px;
-  margin: 0 auto;
 }
 
-.page-user-info--photo {
+.user-info__photo {
   display: block;
   width: 123px;
   height: 123px;
   border-radius: 16px;
-  margin-top: 97px;
+  margin-bottom: 20px;
 }
 
-.page-user-info--name {
-  display: block;
+.user-info__name {
   font-family: "Golos UI", sans-serif; 
   font-weight: 500;
   font-size: 32px;
   line-height: 1;
   color: #222222;
-  margin-top: 20px;
+  margin-bottom: 10px;
 }
 
-.page-user-info--status {
+.user-info__status {
   font-family: "Golos UI", sans-serif; 
   font-size: 15px;
   line-height: 1.2;
   color: #222222;
-  margin-top: 10px;
   text-align: center;
+  margin-bottom: 12px;
 }
 
-.page-header__profile-statistic {
+.profile-statistic {
   display: flex;
   align-items: center;
   background-color: #F2F3F5;
   width: max-content;
   border-radius: 6px;
   padding: 6px 10px;
-  margin-top: 12px;
+  margin-bottom: 42px;
 }
 
 .profile-statistic__info {
@@ -95,25 +85,15 @@
   margin-right: 6px;
 }
 
-/* посты профиля */
-
-.page-user-posts {
-  margin-top: 42px;
-  width: 100%;
-  font-size: 0;
+.user-posts {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
 
-.page-user-posts__post--left-and-center {
+.user-posts__post {
   height: 322px; 
   width: 322px; 
-  margin-bottom: 2px;
-  margin-right: 2px;
   border-radius: 2px;
-}
-
-.page-user-posts__post--right {
-  height: 322px; 
-  width: 322px; 
   margin-bottom: 2px;
-  border-radius: 2px;
 }

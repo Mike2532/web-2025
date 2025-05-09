@@ -1,0 +1,81 @@
+CREATE TABLE user (
+    user_id CHAR(23), 
+    user_first_name VARCHAR(100) NOT NULL,
+    user_last_name VARCHAR(100),
+    user_status VARCHAR(255),
+    user_avatar VARCHAR(260),
+    user_email VARCHAR(300) NOT NULL UNIQUE KEY,
+    user_password CHAR(64) NOT NULL,
+    PRIMARY KEY (user_id)
+);
+
+CREATE TABLE post (
+    post_id CHAR(23),
+    post_author_id CHAR(23) NOT NULL,
+    post_description MEDIUMTEXT, 
+    post_reactions INT UNSIGNED NOT NULL DEFAULT 0,
+    post_when_posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    PRIMARY KEY (post_id)
+);
+
+CREATE TABLE image (
+    image_id CHAR(23),
+    owner_id CHAR(23) NOT NULL,
+    image_name VARCHAR(260) NOT NULL,
+    PRIMARY KEY (image_id)
+);
+
+ALTER TABLE
+    user 
+DROP COLUMN
+    user_avatar;
+
+ALTER TABLE 
+    user 
+MODIFY
+    user_status VARCHAR(255) DEFAULT NULL;
+
+ALTER TABLE 
+    user 
+MODIFY   
+    user_last_name VARCHAR(100) DEFAULT NULL;
+
+ALTER TABLE 
+    user 
+MODIFY
+    user_status VARCHAR(255);
+
+ALTER TABLE 
+    user 
+MODIFY   
+    user_last_name VARCHAR(100);
+
+ALTER TABLE 
+    post
+MODIFY   
+    user_last_name VARCHAR(100) DEFAULT NULL;
+
+CREATE TABLE image (
+    owner_id CHAR(23) NOT NULL,
+    image_name VARCHAR(260) NOT NULL,
+    PRIMARY KEY (owner_id)
+);
+
+ALTER TABLE 
+    user
+ADD 
+    user_avatar VARCHAR(260) DEFAULT 'media/static_media/empty_ava.jpeg';
+
+UPDATE 
+    user 
+SET 
+    user_avatar = 'profileava.png'
+WHERE 
+    user_id = '67f6e135bd0068.08606824';
+
+UPDATE 
+    user 
+SET 
+    user_avatar = 'profileavaLisa.png'
+WHERE 
+    user_id = '67f6e14c3c9b40.71886685';

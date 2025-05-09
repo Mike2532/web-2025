@@ -17,7 +17,7 @@
   z-index: 1;
 }
 
-.user-avatar {
+.hello-picture {
   width: 462px;
   height: 501px;
   position: fixed;
@@ -89,8 +89,6 @@
   width: 24px;
   height: 24px;
 }
-
-/* стили для текста*/
 
 .auth__comments {
   display: block;

@@ -89,5 +89,7 @@
         }
     }
 
-    printHome(homeGenerate());
+    function getHomeContent() {
+        printHome(homeGenerate());
+    }
 ?>

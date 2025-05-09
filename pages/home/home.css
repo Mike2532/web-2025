@@ -4,48 +4,41 @@
   padding: 0;
 }
 
-.header {
+.top-of-page {
   height: 73px;
 }
 
-.page__menu {
+.menu {
   width: 72px;
-  height: 100vh;
+  height: 100%;
   position: fixed;
+  padding: 24px 16px;
   border-right: 1px solid #2222220D;
-  z-index: 1;
 }
 
-.page__menu__icon {
-  display: block;
-  padding: 8px;
-  margin-inline: 16px;
+.menu__icon {
   margin-top: 16px;
 }
 
-.page__menu__icon--active {
-  display: block;
-  margin-inline: 16px;
-  margin-top: 56px;
-}
-
 .post {
+  display: flex;
+  flex-direction: column;
+  justify-self: center;
   width: 474px;
   padding-top: 16px;
   padding-bottom: 20px;
-  margin: 0 auto;
 }
 
-.post__author-ava {
+.header__author-ava {
   width: 32px;
   height: 32px;
   border-radius: 6px;
   margin-right: 10px;
 }
 
-.post__header {
+.header {
   display: flex;
-  align-items: center;
+  justify-content: space-between;
   font-family: "Golos UI", sans-serif;
   font-weight: 500;
   font-size: 14px; 
@@ -54,17 +47,18 @@
   margin-top: 16px;
 }
 
-.post__edit-icon {
-  margin-left: auto;
+.header__user-info {
+  display: flex;
+  align-items: center;
+}
+
+.header__edit-icon {
   height: 32px;
   width: 32px;
 }
 
 .post__picture {
-  justify-content: center;
   margin-top: 16px;
-  width: 100%;
-  height: auto;
 }
 
 .post__reactions {
