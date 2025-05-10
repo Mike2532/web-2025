@@ -5,7 +5,7 @@
         "post_content": ["/media/user_media/ivan/posts/Frame22.png"], 
         "post_description": "Так красиво сегодня на улице! Настоящая зима)) Вспоминается Бродский: «Поздно ночью, в уснувшей долине, на самом дне, в городке, занесенном снегом по ручку двери...»", 
         "post_reactions": 203,
-        "post_whenPosted": 1744230426
+        "post_when_posted": 1744230426
     },
     {
         "post_id": "67f6605d3028b4.48795563", 
@@ -13,7 +13,7 @@
         "post_content": ["/media/user_media/lisa/posts/Frame28.png"], 
         "post_description": "То, что стоит запомнить.", 
         "post_reactions": 534,
-        "post_whenPosted": 1744183626
+        "post_when_posted": 1744183626
     },
     {
         "post_id": "67f6605d302893.94604725", 
@@ -21,7 +21,7 @@
         "post_content": ["/media/user_media/ivan/posts/Frame23.png"], 
         "post_description": "Время идет, а некоторые моменты остаются.", 
         "post_reactions": 176,
-        "post_whenPosted": 1734183626
+        "post_when_posted": 1734183626
     },
     {
         "post_id": "67f6605d302885.71059498", 
@@ -29,7 +29,7 @@
         "post_content": ["/media/user_media/ivan/posts/Frame24.png"],
         "post_description": "Тишина тоже может говорить.", 
         "post_reactions": 519,
-        "post_whenPosted": 1728983520
+        "post_when_posted": 1728983520
     },
     {
         "post_id": "67f6605d302878.40580805", 
@@ -37,7 +37,7 @@
         "post_content": ["/media/user_media/ivan/posts/Frame25.png"], 
         "post_description": "Без лишних слов, только впечатления.", 
         "post_reactions": 201,
-        "post_whenPosted": 1728810720
+        "post_when_posted": 1728810720
     },
     {
         "post_id": "67f6605d302867.64262496", 
@@ -45,7 +45,7 @@
         "post_content": ["/media/user_media/ivan/posts/Frame26.png"], 
         "post_description": "Иногда реальность сама становится композицией.", 
         "post_reactions": 209,
-        "post_whenPosted": 1707815520
+        "post_when_posted": 1707815520
     },
     {
         "post_id": "67f6605d302852.38686771", 
@@ -53,6 +53,6 @@
         "post_content": ["/media/user_media/ivan/posts/Frame27.png"],
         "post_description": "Иногда все складывается именно так, как нужно.", 
         "post_reactions": 502,
-        "post_whenPosted": 1704063615
+        "post_when_posted": 1704063615
     }
 ]

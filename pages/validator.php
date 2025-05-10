@@ -36,7 +36,11 @@
         return false;
     }
 
-    function postTimeValidate(int $data): bool {
+    function postTimeValidate(string|int $data): bool {
+        if (!is_numeric($data)){
+            die("{$data}");
+        }
+        
         if (!filter_var($data, FILTER_VALIDATE_INT, ['min_range' => 0]) === false) {
             return time() - $data >= 0;
         }

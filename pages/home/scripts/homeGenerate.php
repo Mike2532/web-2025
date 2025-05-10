@@ -1,5 +1,8 @@
 <?php
     require __DIR__ . '/../../id_convert.php';
+    require_once __DIR__ . '/../../../sql_scripts/pdo_script.php';
+    require_once __DIR__ . '/../../../sql_scripts/user_script.php';
+    require_once __DIR__ . '/../../../sql_scripts/post_script.php';
 
     function getPostTime(int $seconds): string {
         $time = time() - $seconds;
@@ -48,7 +51,7 @@
             'user_first_name' => $user['user_first_name'],
             'user_last_name' => $user['user_last_name'],
             'user_avatar' => $user['user_avatar'],
-            'post_when_posted' => getPostTime($post['post_whenPosted']),
+            'post_when_posted' => getPostTime($post['post_when_posted']),
             'post_content' => $post['post_content'],
             'post_id' => $post['post_id'],
             'post_reactions' => $post['post_reactions'],
@@ -57,8 +60,11 @@
     }
 
     function homeGenerate(): array {
-        $users = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/users.json'), true);
-        $posts = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/posts.json'), true);
+        //$users = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/users.json'), true);
+        //$posts = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/posts.json'), true);
+        $users = getAllUsers(getPDO());
+        $posts = getPostsWithImages(getPDO());
+
 
         $homeContent = [];
 
@@ -73,7 +79,7 @@
                 continue;
             }
             
-            if (!postTimeValidate($post['post_whenPosted'])) {
+            if (!postTimeValidate($post['post_when_posted'])) {
                 continue;
             }
             

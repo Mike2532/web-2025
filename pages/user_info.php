@@ -1,7 +1,11 @@
 <?php
     require __DIR__ . '/id_convert.php';
-    $users = json_decode(file_get_contents(__DIR__ . '/../json_folder/users.json'), true);
-    
+    require_once __DIR__ . '/../sql_scripts/pdo_script.php';
+    require_once __DIR__ . '/../sql_scripts/user_script.php';
+
+    //$users = json_decode(file_get_contents(__DIR__ . '/../json_folder/users.json'), true);
+    $users = getAllUsers(getPDO());
+
     $error = true;
 
     $user_id = idGet();

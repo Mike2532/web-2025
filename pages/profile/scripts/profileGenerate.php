@@ -1,5 +1,7 @@
 <?php
     require __DIR__ . '/../../user_info.php';
+    require_once __DIR__ . '/../../../sql_scripts/pdo_script.php';
+    require_once __DIR__ . '/../../../sql_scripts/post_script.php';
 
     function postCounterEnding(int $post_counter): void {
         echo ' пост';
@@ -20,8 +22,10 @@
     }
 
     function getUserPosts(string $user_id): array {
-        $posts = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/posts.json'), true);
-    
+        //$posts = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/posts.json'), true);
+        $posts = getPostsWithImages(getPDO());
+
+        
         $user_posts = [
             'post-image' => [],
             'counter' => 0,

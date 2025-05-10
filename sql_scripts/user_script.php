@@ -1,17 +1,5 @@
 <?php
 
-// function getPDO(): bool|PDO {
-//     $dsn = 'mysql:host=127.0.0.1;dbname=blog';
-//     $user = 'root';
-//     $password = '1872';
-//     try {
-//         return new PDO($dsn, $user, $password);
-//     } catch (PDOException $exception) {
-//         echo $exception->getMessage();
-//         return false;
-//     }
-// }
-
 function addUser(PDO $pdo, array $user): bool {
     $sql = <<<SQL
         INSERT INTO 
@@ -90,16 +78,4 @@ function getAllUsers(PDO $pdo): bool|array {
     }
 }
 
-// $pdo = getPDO();
-// $users = getAllUsers($pdo);
-
-
-// foreach($users as $user) {
-//     foreach($user as $key => $value) {
-//         echo "{$key} => {$value}<br>";
-//     }
-//     echo "<hr>";
-// }
-
-// echo "<img src={$users[0]['user_avatar']}>";
 ?>

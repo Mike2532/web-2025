@@ -246,12 +246,19 @@ $post7 = [
     "post_reactions" => 502,
 ];
 
-// addPost($pdo, $post2);
-// addPost($pdo, $post3);
-// addPost($pdo, $post4);
-// addPost($pdo, $post5);
-// addPost($pdo, $post6);
-// addPost($pdo, $post7);
+addPost($pdo, $post7);
+sleep(3);
+addPost($pdo, $post6);
+sleep(3);
+addPost($pdo, $post5);
+sleep(3);
+addPost($pdo, $post4);
+sleep(3);
+addPost($pdo, $post3);
+sleep(3);
+addPost($pdo, $post2);
+sleep(3);
+addPost($pdo, $post1);
 
 
 $user1 = [

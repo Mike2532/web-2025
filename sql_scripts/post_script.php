@@ -1,17 +1,5 @@
 <?php
 
-// function getPDO(): bool|PDO {
-//     $dsn = 'mysql:host=127.0.0.1;dbname=blog';
-//     $user = 'root';
-//     $password = '1872';
-//     try {
-//         return new PDO($dsn, $user, $password);
-//     } catch (PDOException $exception) {
-//         echo $exception->getMessage();
-//         return false;
-//     }
-// }
-
 function addPost(PDO $pdo, array $post): bool {
     $sql = <<<SQL
         INSERT INTO
@@ -67,15 +55,22 @@ function delitePostById(PDO $pdo, string $id) {
 
 function getAllPosts(PDO $pdo): bool|array {
     $sql = <<<SQL
-        SELECT * FROM 
+        SELECT 
+            post_id,
+            post_author_id,
+            post_description,
+            post_reactions,
+            UNIX_TIMESTAMP(post_when_posted) AS post_when_posted  
+        FROM 
             post 
         ORDER BY 
-            post_when_posted ASC
+            post_when_posted DESC
     SQL;
 
     try {
         $stmt = $pdo->query($sql);
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
+        return $posts;
     } catch (PDOException $exception) {
         echo $exception->getMessage();
         return false;
@@ -89,7 +84,7 @@ function postGetImages(PDO $pdo, array $posts): bool|array {
             post.post_author_id,
             post.post_description,
             post.post_reactions,
-            post.post_when_posted,
+            UNIX_TIMESTAMP(post.post_when_posted) AS post_when_posted,
             GROUP_CONCAT(image.image_name) AS post_content
         FROM
             post 
@@ -98,7 +93,7 @@ function postGetImages(PDO $pdo, array $posts): bool|array {
         GROUP BY 
             post.post_id 
         ORDER BY 
-            post.post_when_posted ASC
+            post.post_when_posted DESC
     SQL;
 
     try {
@@ -129,21 +124,4 @@ function getPostsWithImages(PDO $pdo): bool|array {
     }
 }
 
-// $pdo = getPDO();
-
-// $posts = getPostsWithImages($pdo);
-
-
-// foreach ($posts as $post) {
-//     foreach ($post as $key => $value) {
-//         if (is_array($value)) {
-//             echo "{$key} => [" . implode(', ', $value) . "]<br>";
-//         } else {
-//             echo "{$key} => {$value} <br>";
-//         }
-//     }
-//     echo "<hr>";
-// }
-
-// echo "<img src={$posts[0]['post_content'][0]}>";
 ?>
