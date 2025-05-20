@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>проверка связи</title>
+        <script src="scrt.js"></script>
+    </head>
+    <body>
+        <h1>Тестим дом</h1>
+
+        <div class="somejunk"></div>
+        
+        <div class="posts">
+
+            <div class="post">
+                пост 1
+                <div class="header">тут что-то хз что</div> 
+                
+                <div class="post__content">
+                    <p class="picture">тут картинка поста1</p>
+                    <p class="picture">тут картинка поста2</p>
+                    <p class="picture">тут картинка поста3</p>
+                    <p class="picture">тут картинка поста4</p>
+                </div>
+                
+                <div class="post__reactions"></div> 
+                <p class="post__description">пост 1</p> 
+                <p class="post__when-posted">4 минут назад</р>
+
+            </div>
+
+            <div class="post">
+                пост 1
+                <div class="header">тут что-то хз что</div> 
+                
+                <div class="post__content">
+                    <p class="picture">тут картинка поста1</p>
+                    <p class="picture">тут картинка поста2</p>
+                    <p class="picture">тут картинка поста3</p>
+                    <p class="picture">тут картинка поста4</p>
+                </div>
+                
+                <div class="post__reactions"></div> 
+                <p class="post__description">пост 1</p> 
+                <p class="post__when-posted">4 минут назад</р>
+
+            </div>
+
+            <div class="post">
+                пост 1
+                <div class="header">тут что-то хз что</div> 
+                
+                <div class="post__content">
+                    <p class="picture">тут картинка поста1</p>
+                    <p class="picture">тут картинка поста2</p>
+                    <p class="picture">тут картинка поста3</p>
+                    <p class="picture">тут картинка поста4</p>
+                </div>
+                
+                <div class="post__reactions"></div> 
+                <p class="post__description">пост 1</p> 
+                <p class="post__when-posted">4 минут назад</р>
+
+            </div>
+    
+        </div>
+
+        <p class="main-text">ну а тут просто какой-то текст</p>
+        <img class="post__picture" src="/media/user_media/67f6e135bd0068.08606824/posts/Frame22.png" alt="картинка поста">
+
+        <?php 
+                $arr = ['apple', 'banana', 'orange', 'car', 'sea'];
+                if (count($arr) > 1) {
+                    require __DIR__ . '/buttons.php';
+                }
+            ?>
+
+    </body>
+</html>
+
+
+
+<button class="top-button buttom">
+    <img class="picture" src="/media/static_media/edit_icon.svg" alt="кнопка редактирования">
+</button>
+
+<div class="central-buttons">
+
+    <button class="buttom">
+        <img class="picture" src="/media/static_media/edit_icon.svg" alt="кнопка редактирования">
+    </button>
+
+    <button class="buttom">
+        <img class="picture" src="/media/static_media/edit_icon.svg" alt="кнопка редактирования">
+    </button>
+</div>
+
+<img class="top-button" src="/media/static_media/edit_icon.svg">
+
+
+<div class="modal-window__post">
+    <img class="modal-picture" src="/domtst/images/Frame22.png" >
+</div>
+<img class="left-arrow" src="/domtst/images/LeftSlide.svg">
+<img class="right-arrow" src="/domtst/images/RightSlide.svg">
+<span class="modal-window__counter">1 из 3</span>
+
+
+.left-arrow {
+    position: absolute;
+    left: 3.376%;
+    top: 46.626%;
+    height: 20px;
+    width: 20px;
+}
+
+.right-arrow {
+    position: absolute;
+    top: 46.626%;
+    right: 3.376%;
+    height: 20px;
+    width: 20px;
+}
