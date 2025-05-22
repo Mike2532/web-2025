@@ -5,7 +5,10 @@
         <title>Лента</title>
         <link href="/pages/font.css" rel="stylesheet">
         <link href="/pages/home/home.css" rel="stylesheet">
+        <link href="/pages/home/swiper.css" rel="stylesheet">
+        <link href="/pages/home/modWindow.css" rel="stylesheet">
         <?php require __DIR__ . '/scripts/homeGenerate.php' ?>
+        <script type="module" src="scripts/UI/UI.js"></script>
     </head>
     <body>        
         <div class="menu"> 
@@ -15,6 +18,18 @@
         </div>   
         
         <header class="top-of-page"></header>
-        <?php getHomeContent() ?>
+
+        <div class="all-posts">
+            <?php getHomeContent() ?>
+        </div>
+
+        <div class="modal-window">
+            <div class="modal-window__content">
+                <img class="modal-window__close" src="/domtst/images/MWCloseButton.svg">
+                <div class="content-block__media">
+                </div>
+            </div>
+        </div>
+
     </body>
 </html>

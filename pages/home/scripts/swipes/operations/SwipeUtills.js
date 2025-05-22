@@ -1,8 +1,8 @@
 import constants from "./constants.js";
 
 export function getCountBox(post) {
-    post = post.closest('.content--block') || post.closest('.modal-window__content');
-    return post.querySelector('.post-counter')||post.querySelector('.modal-window__counter');
+    post = post.closest('.content-block') || post.closest('.modal-window__content');
+    return post.querySelector('.content-block__media')||post.querySelector('.modal-window__counter');
 }
 
 export function getBoxNums(countBox, divider) {

@@ -8,12 +8,12 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function postsAddUI() {
-    const allPosts = document.getElementsByClassName('content--block');
+    const allPosts = document.getElementsByClassName('content-block');
     for(let post of allPosts) {
         const postContent = post.getElementsByClassName('post-picture');
         const postContentLen = postContent.length;
         if (postContentLen > constants.MIN_LEN) {
-            post.querySelector('.media').innerHTML += UIDrow.getButtons();
+            post.querySelector('.content-block__media').innerHTML += UIDrow.getButtons();
             post.innerHTML += UIDrow.getCounter();
             UIDrow.fillCountBox(post, postContentLen);
             createSlider(post, '/');

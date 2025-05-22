@@ -2,7 +2,7 @@ import * as SwipeOperations from './../swipes/operations/operations.js';
 import constants from './constants.js';
 
 export function getPost(target) {
-    const posBlockClone = target.closest('.content--block').cloneNode(true);
+    const posBlockClone = target.closest('.content-block').cloneNode(true);
     return posBlockClone;
 }
 
@@ -12,7 +12,7 @@ export function getModalWindow(target) {
 
 export function insertPostToMW(post, modalWindow) {
     const MWContent = modalWindow.querySelector('.modal-window__content');
-    const MWMedia = MWContent.querySelector('.media');
+    const MWMedia = MWContent.querySelector('.content-block__media');
     
     MWMedia.appendChild(post.querySelector('.posts'));
 

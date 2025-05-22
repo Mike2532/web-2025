@@ -55,4 +55,10 @@
     function isValidUser(array $post, int|string $seeker_id): bool {
         return (innerContentValidate($post['post_author_id']) && (($seeker_id == $post['post_author_id']) || ($seeker_id == '-1')));
     }
+
+    function userValidate(array $user): bool {
+        return  nameValidate($user['user_first_name']) &&
+                nameValidate($user['user_last_name']) &&
+                innerContentValidate($user['user_avatar']);
+    }
 ?>

@@ -8,7 +8,7 @@ const constants = {
 
 function tstRSwipe(event) {
     const target = event.target;
-    const post = target.closest('.post-block');
+    const post = target.closest('.content--block');
     const postPictures = post.querySelector('.posts');
     let curr = postPictures.querySelector('.visiable');
     
@@ -25,7 +25,7 @@ function tstRSwipe(event) {
 
 function tstLSwipe(event) {
     const target = event.target;
-    const post = target.closest('.post-block');
+    const post = target.closest('.content--block');
     const postPictures = post.querySelector('.posts');
     let curr = postPictures.querySelector('.visiable');
     curr.classList.remove('visiable');

@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", () => {
     
-    const allPosts = document.getElementsByClassName('post-block')
+    const allPosts = document.getElementsByClassName('content--block')
     for(let post of allPosts) {
         const postContent = post.getElementsByClassName('post').length
         if (postContent > 1) {
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
 })
 
 function doSwipe(target, type) {
-    const post = target.closest('.post-block').querySelector('.posts');
+    const post = target.closest('.content--block').querySelector('.posts');
     let curr = post.querySelector('.visiable');
     curr.classList.remove('visiable');
 

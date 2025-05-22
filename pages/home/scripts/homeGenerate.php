@@ -1,52 +1,23 @@
 <?php
-    require __DIR__ . '/../../id_convert.php';
+    require_once __DIR__ . '/../../id_convert.php';
     require_once __DIR__ . '/../../../sql_scripts/pdo_script.php';
     require_once __DIR__ . '/../../../sql_scripts/user_script.php';
     require_once __DIR__ . '/../../../sql_scripts/post_script.php';
+    require_once __DIR__ . '/getPostTime.php';
+    require_once __DIR__ . '/../../validator.php';
 
-    function getPostTime(int $seconds): string {
-        $time = time() - $seconds;
-       
-        if ($time < 60) {
-            return 'только что';
-        } elseif ($time < 3600) {
-            $minutes = floor($time / 60);
-            return "$minutes минут назад";
-        } elseif ($time < 86400) {
-            $hours = floor($time / 3600);
-            return "$hours часов назад";
-        } elseif ($time < 604800) {
-            $days = floor($time / 86400);
-            return "$days суток назад";
-        } elseif ($time < 2629743) { 
-            $weeks = floor($time / 604800);
-            return "$weeks недель назад";
-        } elseif ($time < 31556926) {
-            $months = floor($time / 2629743);
-            return "$months месяцев назад";
-        } else {
-            $years = floor($time / 31556926);
-            return "$years лет назад";
-        }
-    }
-
-    function findUser(array $users, string $post_author_id): array|bool {
+    function findUserByPostId(array $users, string $post_author_id): ?array {
         foreach ($users as $user) {
-            if (($user['user_id'] == $post_author_id) && 
-                nameValidate($user['user_first_name']) &&
-                nameValidate($user['user_last_name']) &&
-                innerContentValidate($user['user_avatar'])) {
 
-                $post_author_first_name = $user['user_first_name'];
-                $post_author_last_name = $user['user_last_name'];
-                $post_author_ava = $user['user_avatar'];
+            if (($user['user_id'] == $post_author_id) && userValidate($user)) {                
                 return $user;
             }
         }
+        
         return false;
     }
 
-    function postFormat(array $user, array $post): array {
+    function makePostData(array $user, array $post): array {
         return [
             'user_first_name' => $user['user_first_name'],
             'user_last_name' => $user['user_last_name'],
@@ -62,9 +33,9 @@
     function homeGenerate(): array {
         //$users = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/users.json'), true);
         //$posts = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/posts.json'), true);
-        $users = getAllUsers(getPDO());
-        $posts = getPostsWithImages(getPDO());
-
+        $PDO = getPDO();
+        $users = getAllUsers($PDO);
+        $posts = getPostsWithImages($PDO);
 
         $homeContent = [];
 
@@ -74,8 +45,8 @@
                 continue;
             }
 
-            $user = findUser($users, $post['post_author_id']);
-            if ($user === false) {
+            $user = findUserByPostId($users, $post['post_author_id']);
+            if (!$user) {
                 continue;
             }
             
@@ -83,7 +54,7 @@
                 continue;
             }
             
-            $homeContent[] = postFormat($user, $post);
+            $homeContent[] = makePostData($user, $post);
         }
 
         return $homeContent;
@@ -95,7 +66,25 @@
         }
     }
 
-    function getHomeContent() {
+    function getPostPictures(array $post): void {
+        $pictures = $post['post_content'];
+
+        for ($i = 0; $i < count($pictures); $i++) {
+            $img = '<img class="post-picture';
+            
+            if ($i == 0) {
+                $img .= ' visiable';
+            }
+
+            $img .= '" src="' . $pictures[$i] . '" alt="картинка поста">';
+
+            echo $img;
+        }
+
+    }
+
+    function getHomeContent(): void {
         printHome(homeGenerate());
     }
+    
 ?>

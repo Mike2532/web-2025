@@ -7,7 +7,13 @@
         <img class="header__edit-icon" src="/media/static_media/edit_icon.svg" alt="кнопка редактирования">
     </div>
 
-    <img class="post__picture" src=<?= $post['post_content'][0] ?> alt="картинка поста">
+    <div class="content-block">
+        <div class="content-block__media">
+            <div class="posts">
+                <?php getPostPictures($post) ?>
+            </div>
+        </div>
+    </div>
             
     <div class="post__reactions">
         <img src="/media/static_media/heart.png" alt="картинка реакций">

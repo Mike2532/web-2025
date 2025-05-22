@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function postsAddUI() {
-    const allPosts = document.getElementsByClassName('post-block');
+    const allPosts = document.getElementsByClassName('content--block');
     for(let post of allPosts) {
         const postContent = post.getElementsByClassName('post-picture');
         const postContentLen = postContent.length;
