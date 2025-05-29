@@ -62,6 +62,8 @@
 
     function printHome(array $homeContent): void {
         foreach ($homeContent as $post) {
+            $postSize = count($post['post_content']);
+            $addUI = $postSize > 1;
             require __DIR__ . '/post.php';
         }
     }

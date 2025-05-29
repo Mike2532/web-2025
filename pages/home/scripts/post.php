@@ -12,7 +12,9 @@
             <div class="posts">
                 <?php getPostPictures($post) ?>
             </div>
+            <?php if($addUI) require __DIR__ . '/post_arrows.php' ?>
         </div>
+        <?php if($addUI) require __DIR__ . '/post_counter.php' ?>
     </div>
             
     <div class="post__reactions">

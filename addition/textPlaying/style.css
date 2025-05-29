@@ -1,0 +1,9 @@
+.container {
+    background-color: red;
+    width: 400px;
+    line-height: 20px;
+}
+
+.dotted::after {
+    content: '...';
+}

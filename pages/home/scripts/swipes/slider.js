@@ -2,8 +2,8 @@ const OFFSET = 1;
 
 function createSlider(postElement, splitter) {
     const pictures = postElement.querySelectorAll('.post-picture');
-    const counterBox = postElement.querySelector('.content-block__counter')||postElement.querySelector('.modal-window__counter');
     const maxIndex = pictures.length;
+    const counterBox = postElement.querySelector('.content-block__counter')||postElement.querySelector('.modal-window__counter');
 
     let currentIndex = Array.from(pictures).findIndex(pic => pic.classList.contains('visiable'));
     let currentPicture = pictures[currentIndex];
@@ -22,7 +22,7 @@ function createSlider(postElement, splitter) {
         (splitter == '/')
             ? newCounter += '/'
             : newCounter += ' из ';
-        newCounter += `${maxIndex}`;    
+        newCounter += `${maxIndex}`;
         
         counterBox.innerText = newCounter;
     }

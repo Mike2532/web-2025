@@ -92,3 +92,12 @@
   margin-top: 25px;
 }
 
+.describe-switch {
+  width: fit-content;
+  background: none;
+  border: none;
+  font-family: "Golos UI", sans-serif;
+  color: #808080;
+  font-size: 15px;
+  line-height: 1.2;
+}

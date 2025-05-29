@@ -1,0 +1,50 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    position: relative;
+    padding-top: 5.694%;
+    padding-bottom: 2.222%;
+    height: 100vh;
+}
+
+.menu {
+    width: 72px;
+    height: 100%;
+    position: fixed;
+    padding: 24px 16px;
+    border-right: 1px solid #2222220D;
+}
+  
+.menu__icon {
+    margin-top: 16px;
+}
+
+.create-post {
+    display: flex;
+    justify-self: center;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: red;
+    height: 100%;
+    width: 32.916%;
+}
+
+.main-content {
+    position: relative;
+    padding-top: 100%;
+    width: 100%;
+}
+
+.main-content__image-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: gray;
+    margin-bottom: 4.219%;
+}
