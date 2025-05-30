@@ -7,7 +7,8 @@ function getPDO(): bool|PDO {
     try {
         return new PDO($dsn, $user, $password);
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
+        //echo $exception->getMessage();
+        echo "Что-то пошло не так. Попробуйте позже.";
         return false;
     }
 }

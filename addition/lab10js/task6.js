@@ -8,7 +8,7 @@ function mapObject(nums, callback) {
     return obj
 }
 
-function double(x) {
+function doubleNumber(x) {
     if (Number.isFinite(x)) {
         return x * 2
     } else {
@@ -16,4 +16,4 @@ function double(x) {
     }
 }
 
-console.log(mapObject(nums, double))
+console.log(mapObject(nums, doubleNumber))

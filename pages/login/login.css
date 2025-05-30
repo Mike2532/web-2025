@@ -15,16 +15,14 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: 69.583%;
+  width: 63.3%;
 }
 
 .media {
-  height: 42vw;
-  width: 55%;
   position: relative;
 }
 
-.title {
+.media__title {
   font-family: "Golos UI", sans-serif; 
   font-weight: 700; 
   font-size: 140px;
@@ -32,16 +30,13 @@ body {
   color: #222222;
   letter-spacing: -1.5px;
   position: absolute;
-  left: 0;
-  right: 0;
+  top: -106.63px;
+  left: -90px;
   z-index: 1;
 }
 
-.hello-picture {
-  width: 83.7%;
-  position: absolute;
-  right: 0;
-  bottom: 0;
+.media__hello-picture {
+  max-width: 100%;
 }
 
 .auth {
@@ -51,6 +46,8 @@ body {
   color: #222222;
   letter-spacing: -0.15px; 
   margin-bottom: 5px;
+  position: relative;
+  bottom: 29px;
 }
 
 .auth__field {
@@ -73,11 +70,11 @@ body {
   border: 1px solid #3F8AE0;
 }
 
-.auth__field-error {
+.auth__field_error {
   border: 1px solid #E64646;
 }
 
-.error-message {
+.auth__error-message {
   background-color: #FFECEC;
   border-radius: 10px;
   width: 343px;
@@ -86,7 +83,7 @@ body {
   padding: 12px;
 }
 
-.error-message--hidden {
+.auth__error-message_hidden {
   visibility: hidden;
 }
 
@@ -118,7 +115,7 @@ body {
   width: 24px;
   height: 24px;
   position: absolute;
-  right: 5px;
+  right: 10px;
   top: 10px;
 }
 
@@ -131,6 +128,6 @@ body {
   margin-bottom: 16px; 
 }
 
-.input-field {
+.auth__field-wrapper {
   position: relative;
 }

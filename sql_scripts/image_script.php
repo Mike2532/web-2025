@@ -23,7 +23,8 @@ function addImage(PDO $pdo, array $image): bool {
         $stm->execute($params);  
         return true;
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
+        //echo $exception->getMessage();
+        echo "Что-то пошло не так. Попробуйте позже.";
         return false;
     }
 }
@@ -43,7 +44,8 @@ function deliteImageByName(PDO $pdo, string $name) {
         ]);
         return true;
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
+        //echo $exception->getMessage();
+        echo "Что-то пошло не так. Попробуйте позже.";
         return false;
     }
 }
