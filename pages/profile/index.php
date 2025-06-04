@@ -14,7 +14,7 @@
             <img class="menu__icon" src="/media/static_media/menu_items/plus.svg"         alt="кнопка плюс">       
         </div>     
 
-        <header class="top-of-page"></header>
+        <header class="page-top"></header>
 
         <main class="content">
             <div class="user-info">

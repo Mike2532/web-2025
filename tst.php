@@ -7,6 +7,7 @@
         <link href="/pages/home/home.css" rel="stylesheet">
     </head>
     <body>        
-        
+        <p>проверка связи</p>
     </body>
 </html>
+<?php echo 'its php' ?>ps aux | grep php-fpm

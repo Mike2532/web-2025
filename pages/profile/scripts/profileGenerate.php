@@ -23,7 +23,8 @@
 
     function getUserPosts(string $user_id): array {
         //$posts = json_decode(file_get_contents(__DIR__ . '/../../../json_folder/posts.json'), true);
-        $posts = getPostsWithImages(getPDO());
+        $PDO = getPDO();
+        $posts = getPostsWithImages($PDO);
 
         
         $user_posts = [

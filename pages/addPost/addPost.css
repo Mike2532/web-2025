@@ -1,0 +1,65 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.menu {
+  width: 72px;
+  height: 100%;
+  position: fixed;
+  padding: 24px 16px;
+  border-right: 1px solid #2222220D;
+}
+
+.menu__icon {
+  margin-top: 16px;
+}
+
+.content {
+    justify-content: space-between;
+    font-family: "Golos UI", sans-serif;
+
+    width: 32.916%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    justify-self: center;
+    background-color: red;
+
+    padding-top: 5.694%;
+    padding-bottom: 2.222%;
+}
+
+.small-plus {
+    width: 16px;
+    height: 16px;
+    margin-right: 4px;
+}
+
+.small-add {
+    display: flex;
+    align-self: center;
+}
+
+.more-photos {
+    color: #3F8AE0;
+    font-size: 15px;
+    line-height: 1.2;
+    letter-spacing: -0.15px;
+}
+
+.bottom-button {
+    color: #FFFFFF;
+    font-size: 16px;
+    width: fit-content;
+    padding: 16px;
+    background-color: #222222;
+    border-radius: 10px;
+}
+
+.hidden {
+    display: none;
+}

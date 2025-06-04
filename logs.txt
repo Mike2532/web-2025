@@ -1,0 +1,1 @@
+cat /opt/homebrew/var/log/nginx/error.log

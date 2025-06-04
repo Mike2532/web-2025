@@ -1,6 +1,10 @@
 <?php
 
 function addPost(PDO $pdo, array $post): bool {
+    if (!isset($post['post_id'], $post['post_author_id'], $post['post_reactions'], $post['post_description'])) {
+        return false;
+    }    
+    
     $sql = <<<SQL
         INSERT INTO
             post (
@@ -22,18 +26,18 @@ function addPost(PDO $pdo, array $post): bool {
         $params = [
             ':post_id' => $post['post_id'],
             ':post_author_id' => $post['post_author_id'],
-            ':post_description' => $post['post_description'] ?? NULL,
+            ':post_description' => $post['post_description'],
             ':post_reactions' => $post['post_reactions'],
         ];
         $stmt->execute($params);
         return true;
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
+        error_log("Ошибка добавления поста " . $exception->getMessage());
         return false;
     }
 }
 
-function delitePostById(PDO $pdo, string $id) {
+function delitePostById(PDO $pdo, string $id): bool {
     $sql = <<<SQL
         DELETE FROM 
             post
@@ -48,12 +52,12 @@ function delitePostById(PDO $pdo, string $id) {
         ]);
         return true;
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
+        error_log("Ошибка удаления поста по ID: " . $exception->getMessage());
         return false;
     }
 }
 
-function getAllPosts(PDO $pdo): bool|array {
+function getAllPosts(PDO $pdo): array|false {
     $sql = <<<SQL
         SELECT 
             post_id,
@@ -72,12 +76,11 @@ function getAllPosts(PDO $pdo): bool|array {
         $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         return $posts;
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
         return false;
     }
 }
 
-function postGetImages(PDO $pdo, array $posts): bool|array {
+function postGetImages(PDO $pdo): bool|array {
     $sql = <<<SQL
         SELECT
             post.post_id,
@@ -110,18 +113,55 @@ function postGetImages(PDO $pdo, array $posts): bool|array {
         unset($post);
         return $posts;
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
+        error_log("Ошибка получения картинок: " . $exception->getMessage());
         return false;
     }
 }
 
 function getPostsWithImages(PDO $pdo): bool|array {
     $posts = getAllPosts($pdo);
-    if ($posts !== false) {
+    if ($posts) {
         return postGetImages($pdo, $posts);
     } else {
         return false;
     }
 }
 
+function addPostToDB(PDO $pdo, string $postId, string $authorId): bool {
+    $sql = <<<SQL
+        INSERT INTO
+            post (
+                post_id,
+                post_author_id,
+                post_description
+            )
+        VALUES (
+            :post_id,
+            :post_author_id,
+            :post_description
+        );       
+    SQL;  
+
+    try {
+        $stmt = $pdo->prepare($sql);
+        $params = [
+            ':post_id' => $postId,
+            ':post_author_id' => $authorId,
+            ':post_description' => htmlspecialchars($_POST['description']),
+        ];
+        $stmt->execute($params);
+        return true;
+    } catch (PDOException $exception) {
+        error_log("Ошибка добавления поста " . $exception->getMessage());
+        return false;
+    }
+}
+
 ?>
+
+
+imga.png
+imgb.png
+imgc.png
+
+imga.png,imgb.png,imga.png

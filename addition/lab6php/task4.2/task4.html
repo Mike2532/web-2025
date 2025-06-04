@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Ваш знак зодиака</title>
+    </head>
+    <body>
+        <div style="display: none;">
+            Овен (21 марта – 20 апреля)             21.03 - 20.04
+            Телец (21 апреля – 20 мая)              21.04 - 20.05 
+            Близнецы (21 мая – 21 июня)             21.05 - 21.06
+            Рак (22 июня – 22 июля)                 22.06 - 22.07
+            Лев (23 июля – 23 августа)              23.07 - 23.08
+            Дева (24 августа – 23 сентября)         24.08 - 23.09
+            Весы (24 сентября – 23 октября)         24.09 - 23.10
+            Скорпион (24 октября – 22 ноября)       24.10 - 22.11
+            Стрелец (23 ноября – 21 декабря)        23.11 - 21.12
+            Козерог (22 декабря – 20 января)        22.12 - 20.01
+            Водолей (21 января – 20 февраля)        21.01 - 20.02
+            Рыбы (21 февраля – 20 марта)            21.02 - 20.03
+        </div>
+
+        <p>Поддерживаемые форматы даты:</p>
+        <ul>
+                    <li>DD.MM.YYYY / DD.MM.YY</li>
+                    <li>DD-MM-YYYY / DD-MM-YY</li>
+                    <li>DD/MM/YYYY / DD/MM/YY</li>
+                    <li>DD MM YYYY / DD MM YY</li>
+                    
+                    <li>MM.DD.YYYY / MM.DD.YY</li>
+                    <li>MM-DD-YYYY / MM-DD-YY</li>
+                    <li>MM/DD/YYYY / MM/DD/YY</li>
+                    <li>MM DD YYYY / MM DD YY</li>
+                    
+                    <li> Month.DD.YYYY / Month.DD.YY</li>
+                    <li> Month-DD-YYYY / Month-DD-YY</li>
+                    <li> Month/DD/YYYY / Month/DD/YY</li>
+                    <li> Month DD YYYY / Month DD YY</li>
+                    
+                    <li> DD.Month.YYYY / DD.Month.YY</li>
+                    <li> DD-Month-YYYY / DD-Month-YY</li>
+                    <li> DD/Month/YYYY / DD/Month/YY</li>
+                    <li> DD Month YYYY / DD Month YY</li>
+        </ul>
+
+        <form action="getSign.php" method="post">
+            <input type="text" name="date" placeholder="ваша дата рождения" required> <p></p>
+            <input type="submit">
+        </form>
+
+    </body>
+</html>

@@ -1,6 +1,10 @@
 <?php
 
 function addUser(PDO $pdo, array $user): bool {
+    if (!isset($user['user_id'], $user['user_first_name'], $user['user_email'], $user['user_password'])){
+        return false;
+    }
+
     $sql = <<<SQL
         INSERT INTO 
             user (
@@ -35,7 +39,7 @@ function addUser(PDO $pdo, array $user): bool {
         $stm->execute($params);  
         return true;
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
+        error_log("Ошибка добавления юзера: " . $exception->getMessage());
         return false;
     }
 }
@@ -55,7 +59,7 @@ function deliteUserById(PDO $pdo, string $id): bool {
         ]);
         return true;
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
+        error_log("Ошибка удаления юзера по ID: " . $exception->getMessage());
         return false;
     }
 }
@@ -73,7 +77,7 @@ function getAllUsers(PDO $pdo): bool|array {
         unset($user);
         return $users;
     } catch (PDOException $exception) {
-        echo $exception->getMessage();
+        error_log("Ошибка получения всех юзеров: " . $exception->getMessage());
         return false;
     }
 }

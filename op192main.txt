@@ -1,0 +1,114 @@
+PROGRAM SortDate(INPUT, OUTPUT);
+USES 
+  DataInfo;
+VAR
+  Copying: BOOLEAN;
+  D, VarDate: Date;
+  TFile, DateFile: FileOfDate;
+  FInput: TEXT;
+
+PROCEDURE CopyRemains(VAR OFile: TEXT; VAR IFile: TEXT); 
+VAR 
+  Ch: CHAR;
+BEGIN{CopyRemains}
+  WHILE NOT EOF(IFile) 
+  DO 
+    IF NOT EOLN(IFile) 
+    THEN
+      BEGIN 
+        READ(IFile, Ch); 
+        WRITE(OFile, Ch)
+      END
+    ELSE 
+      BEGIN
+        READLN(IFile);   
+        WRITELN(OFile)
+      END 
+END;{CopyRemains}
+
+PROCEDURE FilesInit(VAR FInput: TEXT; VAR DateFile, TFile: FileOfDate);
+BEGIN{FilesInit}
+  ASSIGN(DateFile, 'DF.DAT');
+  ASSIGN(TFile, 'TF.DAT');
+  ASSIGN(FInput, 'FI.TXT');
+  REWRITE(DateFile);
+  RESET(FInput);
+END;{FilesInit} 
+
+PROCEDURE FilesClose(VAR FInput: TEXT; VAR DateFile, TFile: FileOfDate);
+BEGIN{FilesClose}
+  CLOSE(FInput);
+  CLOSE(TFile);
+  CLOSE(DateFile)
+END;{FilesClose}
+
+PROCEDURE ProgramInit(VAR FInput: TEXT; VAR DateFile: FileOfDate; VAR VarDate: Date);
+BEGIN
+  ReadDate(FInput, VarDate);
+  READLN(FInput);
+  WRITE(DateFile, VarDate);
+  RESET(DateFile);
+END;
+
+PROCEDURE CycleBegin(VAR DateFile, TFile: FileOfDate);
+BEGIN{CycleBegin}
+  RESET(DateFile);
+  REWRITE(TFile);
+  Copying := TRUE;
+END;{CycleBegin}
+
+PROCEDURE CycleCopyLast(VAR TFile: FileOfDate; VAR D, VarDate: Date; Copying: BOOLEAN);
+BEGIN
+  WRITE(TFile, D);
+  IF NOT Copying
+  THEN
+    WRITE(TFile, VarDate); 
+END;
+
+PROCEDURE CycleEnd(VAR TFile, DateFile: FileOfDate);
+BEGIN{CycleEnd}
+    CopyRemains(TFile, DateFile);
+    RESET(TFile); //готовим временный файл к чтению
+    REWRITE(DateFile); //перезаписываем файл хранилища 
+    CopyRemains(DateFile, TFile);
+END;{CycleEnd}
+
+PROCEDURE CopyWhileLess(VAR DateFile, TFile: FileOfDate; VAR D, VarDate: Date; Copying: BOOLEAN);
+BEGIN
+  READ(DateFile, VarDate); //берем дату из файла хранения
+  IF Less(VarDate, D) //если дата из файла хранения меньше
+  THEN
+    WRITE(TFile, VarDate) //пишем во временный файл дату из файла хранения
+  ELSE
+    Copying := FALSE //иначе останавливаем копирование
+END;
+
+BEGIN{SortDate}
+  FilesInit(FInput, DateFile, TFile);
+  ProgramInit(FInput, DateFile, VarDate);
+
+  WHILE NOT EOF(FInput) //пока не конец входных данных
+  DO
+    BEGIN
+      ReadDate(FInput, D); //читаем ещё одну дату из input 
+      READLN(FInput); //переходим на новую строку  
+      IF (D.Mo <> NoMonth) //если прочитали что-то адекватное
+      THEN
+        BEGIN
+          CycleBegin(VAR DateFile, TFile: FileOfDate);
+
+          WHILE NOT EOF(DateFile) AND Copying 
+          DO
+            CopyWhileLess(DateFile, TFile, D, VarDate, Copying);
+
+          CycleCopyLast(TFile, D, VarDate, Copying);
+
+          CycleEnd(TFile, DateFile)
+        END
+    END;
+
+  RESET(DateFile);
+  CopyOut(DateFile);
+
+  FilesClose(FInput, DateFile, TFile);
+END.{SortDate}

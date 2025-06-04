@@ -72,8 +72,8 @@ function removeRedBorder(field) {
 function hideErrorMessageIfNeed() {
     const allErrorsItems = document.querySelectorAll('.auth__field_error');
     if (allErrorsItems.length == 0) {
-        const errorWindow = document.querySelector('.error-message');
-        errorWindow.classList.add('error-message--hidden');
+        const errorWindow = document.querySelector('.auth__error-message');
+        errorWindow.classList.add('auth__error-message_hidden');
     }
 }
 
@@ -102,12 +102,12 @@ function emailValidate(email) {
 }
 
 function setErrorMessage(message) {
-    const errorWindow = document.querySelector('.error-message');
+    const errorWindow = document.querySelector('.auth__error-message');
     errorWindow.innerText = message;
-    errorWindow.classList.remove('error-message--hidden');
+    errorWindow.classList.remove('auth__error-message_hidden');
 }
 
 function unsetError() {
-    const errorWindow = document.querySelector('.error-message');
-    errorWindow.classList.add('error-message--hidden');
+    const errorWindow = document.querySelector('.auth__error-message');
+    errorWindow.classList.add('auth__error-message_hidden');
 }

@@ -17,9 +17,17 @@ export function openWindow(event) {
 
 function addMWCloseListener(modalWindow) {
     const closeIcon = modalWindow.querySelector('.modal-window__close');
-    closeIcon.addEventListener('click', (event) => closeListener(event));
-    document.addEventListener('keydown', (event) => eventKeyValidate(event));
+    closeIcon.addEventListener('click', (event) => closeListener(event), {once: true});
+    document.addEventListener('keydown', keyHandler);
 }
+
+const keyHandler = (event) => {
+    if (event.key === 'Escape') {
+        //const closeIcon = document.querySelector('.modal-window__close');
+        //closeIcon.dispatchEvent(new MouseEvent('click'));
+        closeListener(event);
+    }
+};
 
 function addSlider(post) {
     const postContent = post.getElementsByClassName('post-picture');
@@ -29,25 +37,12 @@ function addSlider(post) {
     }
 }
 
-function eventKeyValidate(event) {
-    if (event.key == 'Escape') {
-        const closeIcon = document.querySelector('.modal-window__close');
-        closeIcon.dispatchEvent(new MouseEvent('click'));
-    }
-}
-
 function closeListener(event) {
-    removeAllListeners();
+    document.removeEventListener('keydown', keyHandler);
     const target = event.target;
     const ModWindow = target.closest('.modal-window');
     ModWindow.classList.remove('visiable');
-    ModWindow.innerHTML = MWReInit();
-}
-
-function removeAllListeners() {
-    const closeIcon = document.querySelector('.modal-window__close');
-    closeIcon.removeEventListener('click', (event) => closeListener(event));
-    document.removeEventListener('keydown', (event) => eventKeyValidate(event));
+    ModWindow.innerHTML = modWindowReInit();
 }
 
 function getPost(target) {
@@ -59,7 +54,7 @@ function getModalWindow(target) {
     return target.closest('.all-posts').nextElementSibling;
 }
 
-function MWReInit() {
+function modWindowReInit() {
     return `
     <div class="modal-window__content">
         <img class="modal-window__close" src="/domtst/images/MWCloseButton.svg">

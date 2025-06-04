@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link href="/pages/addPost/addPost.css" rel="stylesheet">
+        <script src="addPost.js"></script>
+        <title>Добавление нового поста</title>
+    </head>
+    <body>
+        <div class="menu"> 
+            <img class="menu__icon" src="/media/static_media/menu_items/home-active.svg"  alt="кнопка меню"> 
+            <img class="menu__icon" src="/media/static_media/menu_items/user.svg"         alt="кнопка профиля">
+            <img class="menu__icon" src="/media/static_media/menu_items/plus.svg"         alt="кнопка плюс">       
+        </div>  
+        
+        <div class="content">
+            <div class="top">
+                <div id="preview">
+                </div>
+
+                <div class="small-add">
+                    <img class="small-plus" src="/media/static_media/add-plus.svg" alt="картинка плюсика">
+                    <span class="more-photos">Добавить фото</span>
+                </div>
+
+                <input id="upload" type="file" accept="image/*" multiple> 
+
+            </div>
+
+            <div class="bottom-button">
+                Поделиться
+            </div>
+        </div>
+        
+
+
+        <form class="hidden" method="post", action="scripts/requestHandler.php", enctype="multipart/form-data">
+            <label for="image">Добавьте картинку</label>
+            <input type="file" name="image" accept=".png" required>
+            <input type="text" name="description" placeholder="Добавьте подпись..." required>
+            <input type="submit" value="поделиться">
+        </form>
+    </body>
+</html>
